@@ -1,0 +1,83 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{PAGE_TITLE}</h2>
+
+
+<div class="panel bg1">
+	<div class="inner"><span class="corners-top"><span></span></span>
+	
+	<dl class="left-box1 details" style="width: 50%;">
+		<dt>{L_MOD_TITLE}:</dt>
+			<dd>
+				<span><!-- IF MOD_VERSION_TYPE -->[{MOD_VERSION_TYPE}]&nbsp;<!-- ENDIF -->{MOD_TITLE}&nbsp;{MOD_VERSION}</span>
+			</dd>
+<!-- IF MOD_AUTHOR -->
+		<dt>{L_MOD_AUTHOR}:</dt>
+			<dd>
+				<span><!-- IF MOD_AUTHOR_EMAIL --> <a href="mailto:{MOD_AUTHOR_EMAIL}?subject={MOD_TITLE} {MOD_VERSION}">{MOD_AUTHOR}</a><!-- ELSE -->{MOD_AUTHOR}<!-- ENDIF --> </span>
+			</dd>	
+<!-- ENDIF -->
+<!-- IF MOD_PHPBB_VERSION -->
+			<dt>{L_MOD_PHPBB_VERSION}:</dt>
+			<dd>
+				<span><!-- IF MOD_PHPBB_VERSION -->{MOD_PHPBB_VERSION}<!-- ENDIF --></span>
+			</dd>	
+<!-- ENDIF -->			
+<!-- IF S_MOD_IS_AUTHORISED_ADM and MOD_INSTALL_DATE-->
+		<dt>{L_MOD_INSTALL_DATE}:</dt>
+			<dd>
+				<span>{MOD_INSTALL_DATE}</span>
+			</dd>		
+<!-- ENDIF -->
+	</dl>
+
+		<dl class="right-box1 details" style="width: 50%;">
+<!-- IF MOD_URL -->
+		<dt style="padding-top:3px">{L_WEBSITE}:</dt>
+			<dd>
+			<ul class="moddb-icons2">
+				<!-- IF MOD_URL --><li class="web-icon"><a href="{MOD_URL}" title="{L_VISIT_WEBSITE}: {MOD_URL}"><span>{L_WEBSITE}</span></a></li><!-- ELSE --><li class="no-icon"></li><!-- ENDIF -->
+			</ul>
+			</dd>
+<!-- ENDIF -->
+<!-- IF MOD_DOWNLOAD_URL -->
+			<dt style="padding-top:3px">{L_DOWNLOAD}:</dt>
+			<dd>
+			<ul class="moddb-icons2">
+			<!-- IF MOD_DOWNLOAD_URL --><li class="download-icon"><a href="{MOD_DOWNLOAD_URL}" title="{L_DOWNLOAD_MOD}: {MOD_DOWNLOAD_URL}"><span>{L_DOWNLOAD_MOD}</span></a></li><!-- ENDIF -->
+			</ul>
+			</dd>
+<!-- ENDIF -->
+<!-- IF not MOD_DOWNLOAD_URL and not MOD_URL--><dt></dt><!-- ENDIF -->
+			</dl>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+
+
+<div class="panel bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="column1">
+
+		<h3>{L_MOD_DESC}</h3>
+		
+		<dl>
+		 <dt style="list-style-position: inside;">{MOD_DESC}</dt> 
+		</dl>
+	</div>
+
+	<div class="column2">
+		<h3>{L_MOD_COMMENTS}</h3>
+		<dl>
+			<dt style="list-style-position: inside;">{MOD_COMMENTS}</dt>
+		</dl>
+	</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+
+
+<!-- INCLUDE jumpbox.html -->
+
+<!-- INCLUDE overall_footer.html -->
