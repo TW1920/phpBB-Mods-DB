@@ -1,0 +1,53 @@
+<!-- INCLUDE overall_header.html -->
+	<form method="post" action="{S_MODE_ACTION}">
+
+<table class="tablebg" width="100%" cellspacing="1" id="modsdb">
+<tr>
+	
+	<th nowrap="nowrap" width="20%" ><a href="{U_SORT_MOD_TITLE}#modsdb">{L_MOD_TITLE}</a></th>
+
+	<th nowrap="nowrap" width="5%"><a href="{U_SORT_MOD_VERSION}#modsdb">{L_MOD_VERSION}</a></th>
+	<th nowrap="nowrap" >{L_MOD_DESC}</th>
+	<th nowrap="nowrap" width="10%"><a href="{U_SORT_MOD_AUTHOR}#modsdb">{L_MOD_AUTHOR}</a></th>
+	<!-- IF S_MOD_IS_AUTHORISED_ADM -->
+	<th class="nowrap"><a href="{U_SORT_MOD_INSTALL_DATE}#modsdb" title="{L_MOD_INSTALL_DATE}">&nbsp;{L_MOD_INSTALL_DATE_SHORT}&nbsp;</a></th>
+	<!-- ENDIF -->
+	<th nowrap="nowrap" colspan="2" width="11%">{L_MOD_URL}</th>
+</tr>
+		<!-- BEGIN modsrow -->
+
+	<!-- IF modsrow.S_ROW_COUNT is even --><tr class="row2"><!-- ELSE -->	<tr class="row1"><!-- ENDIF -->
+
+		<td class="genmed" align="center">&nbsp;<a href="{modsrow.MOD_DETAIL}" title="{L_MOD_DETAIL}: {modsrow.MOD_TITLE}">{modsrow.MOD_TITLE}</a><!-- IF modsrow.MOD_ACCESS --> <span style="color : red;" title="{L_VISIBLE_TO_AMDIN}">({L_ADMIN_SIGN})</span><!-- ENDIF -->&nbsp;</td>
+		<td class="genmed" align="center" >&nbsp;{modsrow.MOD_VERSION}&nbsp;{modsrow.MOD_VERSION_TYPE}&nbsp;</td>
+
+		<td class="genmed" align="left">{modsrow.MOD_DESC}</td>
+		<td class="genmed" align="center">{modsrow.MOD_AUTHOR}</td>
+		<!-- IF S_MOD_IS_AUTHORISED_ADM --><td class="genmed"  align="center">{modsrow.MOD_INSTALL_DATE}</td><!-- ENDIF -->
+		<td class="genmed" align="center"><!-- IF modsrow.MOD_URL --><a href="{modsrow.MOD_URL}">{modsrow.WWW_IMG}</a><!-- ENDIF --></td>
+		<td class="genmed" align="center"><!-- IF modsrow.MOD_DOWNLOAD_URL --><a href="{modsrow.MOD_DOWNLOAD_URL}">{modsrow.DOWNLOAD_IMG}</a><!-- ENDIF --></td>
+	</tr>
+		<!-- END modsrow -->
+<tr>
+	<td class="cat" colspan="<!-- IF S_MOD_IS_AUTHORISED_ADM -->7<!-- ELSE -->6<!-- ENDIF -->" align="center"></td>
+</tr>
+</table>
+	
+</form>
+
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="pagination">{PAGE_NUMBER} [ {TOTAL_MODS} ]</td>
+	<td align="{S_CONTENT_FLOW_END}"><span class="pagination"><!-- INCLUDE pagination.html --></span></td>
+</tr>
+</table>
+
+
+
+	
+	<!-- INCLUDE breadcrumbs.html -->
+	
+	<br clear="all" />
+	
+	<div align="{S_CONTENT_FLOW_END}"><!-- INCLUDE jumpbox.html --></div>	
+<!-- INCLUDE overall_footer.html -->

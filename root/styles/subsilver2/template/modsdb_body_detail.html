@@ -1,0 +1,83 @@
+<!-- INCLUDE overall_header.html -->
+
+<div id="pagecontent">
+
+	<form method="post" action="{S_MODE_ACTION}">
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<th colspan="2" nowrap="nowrap">{PAGE_TITLE}</th>
+	</tr>
+	<tr>
+		<td class="row1" width="50%">
+			<table width="100%" cellspacing="1" cellpadding="2" border="0">
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_MOD_TITLE}: </td>
+				<td width="100%"><b class="gen"><!-- IF MOD_VERSION_TYPE -->[{MOD_VERSION_TYPE}]&nbsp;<!-- ENDIF -->{MOD_TITLE}&nbsp;{MOD_VERSION}</b></td>
+			</tr>
+<!-- IF MOD_AUTHOR -->
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_MOD_AUTHOR}: </td>
+				<td width="100%"><b class="gen"><!-- IF MOD_AUTHOR_EMAIL --> <a href="mailto:{MOD_AUTHOR_EMAIL}?subject={MOD_TITLE} {MOD_VERSION}">{MOD_AUTHOR}</a><!-- ELSE -->{MOD_AUTHOR}<!-- ENDIF --></b></td>
+			</tr>
+<!-- ENDIF -->
+<!-- IF MOD_PHPBB_VERSION -->
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_MOD_PHPBB_VERSION}: </td>
+				<td width="100%"><b class="gen">{MOD_PHPBB_VERSION}</b></td>
+			</tr>
+<!-- ENDIF -->			
+<!-- IF S_MOD_IS_AUTHORISED_ADM and MOD_INSTALL_DATE-->
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_MOD_INSTALL_DATE}: </td>
+				<td width="100%"><b class="gen">{MOD_INSTALL_DATE}</b></td>
+			</tr>
+<!-- ENDIF -->
+			<tr style="height:10px;"><td></td></tr>
+			</table>
+		</td>
+		<td class="row1" width="50%">
+			<table width="100%" cellspacing="1" cellpadding="2" border="0">
+<!-- IF MOD_URL -->
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_WEBSITE}: </td>
+				<td width="100%"><b class="gen"><a href="{MOD_URL}">{WWW_IMG}</a></b></td>
+			</tr>
+<!-- ENDIF -->
+<!-- IF MOD_DOWNLOAD_URL -->
+			<tr>
+				<td class="gen" align="{S_CONTENT_FLOW_END}" nowrap="nowrap">{L_DOWNLOAD}: </td>
+				<td width="100%"><b class="gen"><a href="{MOD_DOWNLOAD_URL}">{DOWNLOAD_IMG}</a></b></td>
+			</tr>
+<!-- ENDIF -->
+			<tr style="height:10px;"><td></td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="cat" align="center" width="50%"><h4>{L_MOD_DESC}</h4></td>
+		<td class="cat" align="center" width="50%"><h4>{L_MOD_COMMENTS}</h4></td>
+	</tr>
+	<tr>
+		<td class="row1" valign="top">
+			{MOD_DESC}
+		</td>
+		<td class="row1" valign="top">
+		{MOD_COMMENTS}
+		</td>
+	</tr>
+	</table>
+
+	</form>
+
+</div>
+
+<br clear="all" />
+
+<!-- INCLUDE breadcrumbs.html -->
+
+<br clear="all" />
+
+<div style="float: {S_CONTENT_FLOW_END};"><!-- INCLUDE jumpbox.html --></div>
+
+<!-- INCLUDE overall_footer.html -->
